@@ -2,126 +2,119 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tudo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
     <ImageButton
-        android:id="@+id/btnComputador"
+        android:id="@+id/escolhaComputador"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="105dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/btnJogador"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vazio" />
 
     <ImageButton
-        android:id="@+id/btnJogador"
+        android:id="@+id/escolhaJogador"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="105dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/btnPapel"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnComputador"
         app:srcCompat="@drawable/vazio" />
 
     <ImageButton
         android:id="@+id/btnPapel"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="56dp"
         android:background="@android:color/transparent"
-        android:onClick="jogar"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnTesoura"
-        app:layout_constraintStart_toEndOf="@+id/btnPedra"
-        app:layout_constraintTop_toBottomOf="@+id/btnJogador"
-        app:srcCompat="@drawable/papel" />
-
-    <ImageButton
-        android:id="@+id/btnPedra"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/transparent"
-        android:onClick="jogar"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnPapel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnJogador"
-        app:srcCompat="@drawable/pedra" />
-
-    <ImageButton
-        android:id="@+id/btnTesoura"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:background="@android:color/transparent"
+        android:contentDescription="@string/bot_o_papel"
+        android:hapticFeedbackEnabled="true"
         android:onClick="jogar"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnPapel"
-        app:layout_constraintTop_toBottomOf="@+id/btnJogador"
-        app:srcCompat="@drawable/tesoura" />
+        app:srcCompat="@drawable/ic_papel_jogador" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="284dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnPedra"
-        app:layout_constraintEnd_toStartOf="@+id/btnComputador"
+    <ImageButton
+        android:id="@+id/btnTesoura"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="jogar"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/btnPapel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/escolhaComputador"
+        app:layout_constraintVertical_bias="0.948"
+        app:srcCompat="@drawable/ic_tesoura_jogador" />
+
+    <ImageButton
+        android:id="@+id/btnPedra"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:hapticFeedbackEnabled="true"
+        android:onClick="jogar"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPapel"
+        app:srcCompat="@drawable/ic_pedra_jogador" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:background="@drawable/ic_message"
+        android:gravity="center"
+        android:hapticFeedbackEnabled="false"
+        android:text="TextView"
+        android:textSize="36sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtResultado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            app:layout_constraintBottom_toTopOf="@+id/txtResultadoValue2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Resultado" />
+    <TextView
+        android:id="@+id/scoreComputador"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtResultadoValue2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtResultado"
-            tools:text="SATANAS" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/scoreJogador"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:background="@android:color/background_light"
+        android:gravity="center"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
